@@ -1,0 +1,14 @@
+{
+  "name": "api",
+  "version": "1.0.0",
+  "description": "API",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "author": "Christopher Neuwirth <christopher.neuwirth@mhp.com>",
+  "license": "ISC",
+  "dependencies": {
+    "@hapi/hapi": "^18.3.1"
+  }
+}
