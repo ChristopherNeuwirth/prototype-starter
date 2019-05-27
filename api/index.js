@@ -5,13 +5,16 @@ const Hapi = require('@hapi/hapi');
 const init = async () => {
   const server = Hapi.server({
     port: 3000,
-    host: 'localhost'
+    host: 'localhost',
+    routes: { cors: true }
+    // tls: true
   });
 
   server.route({
     method: 'GET',
     path: '/api/hello',
     handler: (request, h) => {
+      console.log('REQUEST: ', request.headers, request.url);
       return 'Hello World!';
     }
   });
