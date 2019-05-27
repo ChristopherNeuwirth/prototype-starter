@@ -4,11 +4,19 @@
   "description": "API",
   "main": "index.js",
   "scripts": {
-    "start": "node index.js"
+    "start": "nodemon index.js --exec babel-node --presets babel-preset-env"
   },
   "author": "Christopher Neuwirth <christopher.neuwirth@mhp.com>",
   "license": "ISC",
   "dependencies": {
-    "@hapi/hapi": "^18.3.1"
+    "cors": "^2.8.5",
+    "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.3",
+    "babel-loader": "^8.0.6",
+    "babel-preset-env": "^1.7.0",
+    "nodemon": "^1.19.1"
   }
 }

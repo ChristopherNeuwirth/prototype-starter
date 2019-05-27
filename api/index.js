@@ -1,31 +1,12 @@
-'use strict';
+import express from 'express';
+const app = express();
+const cors = require('cors');
+const port = 3000;
 
-const Hapi = require('@hapi/hapi');
-
-const init = async () => {
-  const server = Hapi.server({
-    port: 3000,
-    host: 'localhost',
-    routes: { cors: true }
-    // tls: true
-  });
-
-  server.route({
-    method: 'GET',
-    path: '/api/hello',
-    handler: (request, h) => {
-      console.log('REQUEST: ', request.headers, request.url);
-      return 'Hello World!';
-    }
-  });
-
-  await server.start();
-  console.log('Server running on %s', server.info.uri);
-};
-
-process.on('unhandledRejection', err => {
-  console.log(err);
-  process.exit(1);
+app.use(cors());
+app.get('/api/hello', (req, res) => {
+  console.log('LOG: ', req);
+  res.send('Hello World.');
 });
 
-init();
+app.listen(port, () => console.log(`Server running on port ${port}!`));
