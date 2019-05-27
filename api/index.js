@@ -5,8 +5,8 @@ const port = 3000;
 
 app.use(cors());
 app.get('/api/hello', (req, res) => {
-  console.log('LOG: ', req);
-  res.send(200, 'Hello World.');
+  console.log('LOG: ', req.route, req.headers);
+  res.status(200).send('Hello World.');
 });
 
 app.listen(port, () => console.log(`Server running on port ${port}!`));
