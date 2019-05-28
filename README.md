@@ -11,3 +11,9 @@
 ```
 ./api
 ```
+
+## TODO
+
+### Enable Production
+
+- env variable für deployment

@@ -1,7 +1,7 @@
+import cors from 'cors';
 import express from 'express';
 const app = express();
-const cors = require('cors');
-const port = 3000;
+const PORT = process.env.PORT || 3000;
 
 app.use(cors());
 app.get('/api/hello', (req, res) => {
@@ -9,4 +9,4 @@ app.get('/api/hello', (req, res) => {
   res.status(200).send('Hello World.');
 });
 
-app.listen(port, () => console.log(`Server running on port ${port}!`));
+app.listen(PORT, () => console.log(`Server running on port ${PORT}!`));
