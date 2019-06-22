@@ -4,11 +4,11 @@
   "description": "API",
   "main": "dist/index.js",
   "scripts": {
-    "start": "node --inspect=5858 -r ts-node/register ./src/index.local.ts",
-    "start:watch": "nodemon",
-    "build": "tsc",
-    "build-production:preview": "netlify-lambda serve src/express",
-    "build-production": "netlify-lambda build src/express"
+    "LEGACY:start": "node --inspect=5858 -r ts-node/register ./src/index.local.ts",
+    "LEGACY:start:watch": "nodemon",
+    "LEGACY:build": "tsc",
+    "serve": "netlify-lambda serve src/express",
+    "build": "netlify-lambda build src/express"
   },
   "author": "Christopher Neuwirth <christopher.neuwirth@mhp.com>",
   "license": "ISC",

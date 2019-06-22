@@ -14,7 +14,7 @@ const headers = {
   'Content-Type': 'application/json'
 };
 // options for cors midddleware
-const options: cors.CorsOptions = {
+const options = {
   allowedHeaders: ['Origin', 'X-Requested-With', 'Content-Type', 'Accept', 'X-Access-Token'],
   credentials: true,
   methods: 'GET,HEAD,OPTIONS,PUT,PATCH,POST,DELETE',
@@ -27,7 +27,7 @@ router.use(cors(options));
 
 router.get('/hello', (req, res) => {
   console.log(req.headers);
-  res.status(200).json({ hello: 'world' });
+  res.status(200).json({ hello: 'Greetings: Hello World' });
 });
 
 app.use(bodyParser.json());
