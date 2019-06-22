@@ -30,6 +30,32 @@ Check out a live version running:
 curl https://prototype-starter-api.netlify.com/.netlify/functions/server/hello
 ```
 
+## Start Development and Deployment
+
+- Clone this project and create GitHub repository.
+- Create a Netlify Account and connect your GitHub account.
+- Create two sites in Netlify.
+
+**UI Settings**
+
+_Build & Deployment_
+
+- Base directory: `ui`
+- Build command: `npm run build`
+- Publish directory: `ui/dist`
+
+**API Settings**
+
+_Build & Deployment_
+
+- Base directory: `api`
+- Build command: `npm run build`
+- Publish directory: `api/functions`
+
+_Build & Deployment_
+
+- Functions directory: `api/functions`
+
 ## Todos and Ideas
 
 - Move to Angular?
