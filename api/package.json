@@ -4,9 +4,10 @@
   "description": "API",
   "main": "dist/index.js",
   "scripts": {
-    "start": "node --inspect=5858 -r ts-node/register ./src/index.ts",
+    "start": "node --inspect=5858 -r ts-node/register ./src/index.local.ts",
     "start:watch": "nodemon",
-    "build": "tsc"
+    "build": "tsc",
+    "build-production": "netlify-lambda build src/express"
   },
   "author": "Christopher Neuwirth <christopher.neuwirth@mhp.com>",
   "license": "ISC",
@@ -16,11 +17,14 @@
   },
   "devDependencies": {
     "@types/cors": "^2.8.5",
-    "@types/express": "^4.16.1",
+    "@types/express": "^4.17.0",
     "@types/node": "^12.0.2",
+    "body-parser": "^1.19.0",
     "eslint": "^5.16.0",
     "eslint-plugin-import": "^2.17.3",
+    "netlify-lambda": "^1.4.13",
     "nodemon": "^1.19.1",
+    "serverless-http": "^2.0.2",
     "ts-node": "^8.2.0",
     "tslint": "^5.16.0",
     "typescript": "^3.4.5"
