@@ -26,9 +26,17 @@ export default Vue.extend({
   },
   methods: {
     getData(): void {
-      axios({ method: 'GET', url: 'http://localhost:3000/api/hello' })
+      const api = `${process.env.VUE_APP_API_BASE_URL}/hello`;
+      console.log('requesting: ', api);
+      axios({
+        method: 'GET',
+        url: api,
+        headers: {
+          'content-type': 'application/json'
+        }
+      })
         .then((result) => {
-          this.msg = result.data;
+          this.msg = result.data.hello;
         })
         .catch((error) => {
           console.error(error);
