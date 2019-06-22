@@ -15,7 +15,7 @@
       </v-flex>
 
       <v-flex mb-5 xs12>
-        <h2 class="headline font-weight-bold mb-3">What's next?</h2>
+        <h2 class="headline font-weight-bold mb-3 demo">What's next?</h2>
       </v-flex>
     </v-layout>
   </v-container>
@@ -32,6 +32,15 @@ export default class HelloWorld extends Vue {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
+@import '../style/mixins/breakpoint.scss';
+
+.demo {
+  transition: color ease-in-out 0.5s;
+  @include breakpoint('s') {
+    color: #42b983;
+  }
+}
+
 h3 {
   margin: 40px 0 0;
 }
