@@ -15,35 +15,49 @@
 </template>
 
 <script lang="ts">
-import { Vue } from 'vue-property-decorator';
+import { Vue, Prop, Component } from 'vue-property-decorator';
 import axios from 'axios';
 
-export default Vue.extend({
-  data() {
-    return {
-      msg: ''
-    };
-  },
-  methods: {
-    getData(): void {
-      const api = `${process.env.VUE_APP_API_BASE_URL}/hello`;
-      console.log('requesting: ', api);
-      axios({
-        method: 'GET',
-        url: api,
-        headers: {
-          'content-type': 'application/json'
-        }
+@Component
+export default class About extends Vue {
+  // @Prop() private propMessage!: string;
+
+  // initial data
+  private msg = '';
+
+  // pass Props to component: <Component prop-message="Hello World"></Component>
+  // use prop values for initial data
+  // private helloMsg = 'Hello, ' + this.propMessage;
+
+  // computed
+  // get computedMsg() {
+  //   return 'computed ' + this.propMessage;
+  // }
+
+  // lifecycle hook
+  // protected mounted() {
+  //   // do sth
+  // }
+
+  // methods
+  public getData(): void {
+    const api = `${process.env.VUE_APP_API_BASE_URL}/hello`;
+    console.log('requesting: ', api);
+    axios({
+      method: 'GET',
+      url: api,
+      headers: {
+        'content-type': 'application/json'
+      }
+    })
+      .then((result) => {
+        this.msg = result.data.hello;
       })
-        .then((result) => {
-          this.msg = result.data.hello;
-        })
-        .catch((error) => {
-          console.error(error);
-        });
-    }
+      .catch((error) => {
+        console.error(error);
+      });
   }
-});
+}
 </script>
 <style lang="scss" scoped>
 @import '../style/mixins/px-rem-converter.scss';
