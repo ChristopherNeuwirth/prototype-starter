@@ -58,4 +58,6 @@ _Build & Deployment_
 
 ## Todos and Ideas
 
-- Move to Angular?
+- Angular Branch
+- Vue ohne Typescript branch
+- NestJS Branch
