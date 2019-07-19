@@ -11,3 +11,7 @@ npm install
 ```
 npm run start
 ```
+
+TODOS:
+
+- Move to Nest
