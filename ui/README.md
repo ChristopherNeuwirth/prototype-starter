@@ -38,3 +38,7 @@ Stuff ToDo
 - Router ✅
 - Custom Styles verbauen (respnsive mixin)
 - Daten in Stateful Komponente holen runter reichen in Stateless Komponente Manipulieren und Event hochschießen
+- Handle static assets
+- Load Assets from Contentful
+- Load Media with Srcset
+- Map Component
