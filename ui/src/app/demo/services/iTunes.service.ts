@@ -5,7 +5,9 @@ import { SearchItem } from '../models/SearchItem';
 @Injectable({
   providedIn: 'root'
 })
-export class HomeService {
+
+// This Service is a demo service for the async and observable API call
+export class DemoService {
   apiRoot = 'https://itunes.apple.com/search';
   results: SearchItem[];
 

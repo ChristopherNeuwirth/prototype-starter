@@ -1,6 +1,6 @@
 {
-  "name": "starter-angular-tryout",
-  "version": "0.0.0",
+  "name": "starter-ui",
+  "version": "1.0.0",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",

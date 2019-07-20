@@ -1,3 +1,15 @@
 /* You can add global styles to this file, and also import other style files */
 @import './style/base/global.scss';
 @import '~@angular/material/prebuilt-themes/indigo-pink.css';
+
+// Demo Styling
+pre {
+  text-align: left;
+  max-width: 300px;
+  display: block;
+  margin: 0 auto;
+  background: #f9f9ff;
+  color: #292c33;
+  padding: 20px;
+  border-radius: 3px;
+}
