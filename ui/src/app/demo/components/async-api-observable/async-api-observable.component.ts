@@ -1,6 +1,6 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { DemoService } from '../../services/iTunes.service';
-import { Observable, ReplaySubject, Subject, combineLatest } from 'rxjs';
+import { Observable, ReplaySubject, Subject, combineLatest, Subscription } from 'rxjs';
 import { SearchItem } from '../../models/SearchItem';
 import { FormControl } from '@angular/forms';
 import { debounceTime, switchMap, distinctUntilChanged, tap, map } from 'rxjs/operators';
@@ -15,6 +15,7 @@ export class AsyncApiObservableComponent implements OnInit, OnDestroy {
   // public results$: Observable<SearchItem[]>;
   public results: SearchItem[] = [];
   public searchField: FormControl;
+  private subscription: Subscription;
 
   constructor(private iTunes: DemoService) {
     this.loading = false;
@@ -37,7 +38,7 @@ export class AsyncApiObservableComponent implements OnInit, OnDestroy {
     //   })
     // );
 
-    this.searchField.valueChanges
+    this.subscription = this.searchField.valueChanges
       .pipe(
         debounceTime(400),
         distinctUntilChanged(),
@@ -51,6 +52,8 @@ export class AsyncApiObservableComponent implements OnInit, OnDestroy {
   }
 
   ngOnDestroy() {
-    // unsubscribe from Subscription?
+    if (this.subscription) {
+      this.subscription.unsubscribe();
+    }
   }
 }
