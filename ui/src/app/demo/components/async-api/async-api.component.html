@@ -4,9 +4,16 @@
 <p>Calling a API asynchronosly and showing a loading Indicator</p>
 <div>
   <mat-form-field>
-    <input matInput placeholder="🔍 Search..." value="" #search />
+    <input matInput placeholder="Search..." value="" #search />
   </mat-form-field>
-  <button class="" (click)="doSearch(search.value)">Search</button>
+  <button
+    mat-stroked-button
+    class=""
+    style="margin-left: 20px; display: inline-block;"
+    (click)="doSearch(search.value)"
+  >
+    Search
+  </button>
 </div>
 
 <ng-container *ngIf="!loading; else loadingIndicator">

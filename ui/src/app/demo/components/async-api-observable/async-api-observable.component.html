@@ -1,0 +1,29 @@
+<pre>
+  components/async-api-observable
+</pre>
+<p>Calling a API asynchronosly and showing a loading indicator with observables</p>
+<div>
+  <mat-form-field>
+    <input matInput placeholder="Search..." value="" type="search" #searchObersvable [formControl]="searchField" />
+  </mat-form-field>
+</div>
+
+<ng-container *ngIf="!loading; else loadingIndicatorObservable">
+  <mat-list>
+    <!-- <mat-list-item *ngFor="let track of results$ | async"> -->
+    <mat-list-item *ngFor="let track of results">
+      <img matListAvatar src="{{ track.thumbnail }}" />
+      <h3 matLine>
+        <span style="display:none;">{{ track.artistId }}</span>
+        <span>{{ track.artistName }}</span>
+      </h3>
+      <p matLine>
+        <span> {{ track.title }} </span>
+      </p>
+    </mat-list-item>
+  </mat-list>
+</ng-container>
+
+<ng-template #loadingIndicatorObservable>
+  <mat-spinner></mat-spinner>
+</ng-template>

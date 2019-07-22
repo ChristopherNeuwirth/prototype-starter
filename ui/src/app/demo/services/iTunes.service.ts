@@ -1,6 +1,8 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { SearchItem } from '../models/SearchItem';
+import { Observable, throwError } from 'rxjs';
+import { map, catchError, tap } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
@@ -38,5 +40,27 @@ export class DemoService {
         });
     });
     return promise;
+  }
+
+  searchByObservable(term: string): Observable<SearchItem[]> {
+    const apiUrl = `${this.apiRoot}?term=${term}&media=music&limit=20`;
+    console.log(term);
+    return this.http.get<SearchItem[]>(apiUrl).pipe(
+      tap((data) => console.log('Response: ', data)),
+      map((res: any) => {
+        return res.results.map(
+          (item) =>
+            ({
+              title: item.trackName,
+              artistName: item.artistName,
+              thumbnail: item.artworkUrl30,
+              artistId: item.artistId
+            } as SearchItem)
+        );
+      }),
+      catchError((error) => {
+        return throwError(error);
+      })
+    );
   }
 }
