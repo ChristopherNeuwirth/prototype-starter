@@ -1,0 +1,33 @@
+@import '../mixins/px-rem-converter.scss';
+@import '../mixins/breakpoint.scss';
+
+// Setup
+$container-width: calc(100vw - 7vw * 2);
+$container-width-xl: calc(100vw - 10vw * 2);
+$container-max-width: rem(1536px);
+
+// Mixin
+@mixin -container {
+  width: $container-width;
+  max-width: $container-max-width;
+  margin: {
+    left: auto;
+    right: auto;
+  }
+  box-sizing: content-box;
+
+  @include breakpoint('m') {
+    padding-left: calc(100vw - 100%);
+  }
+
+  @include breakpoint('xl') {
+    width: $container-width-xl;
+  }
+}
+
+// Class
+.container {
+  & {
+    @include -container;
+  }
+}
