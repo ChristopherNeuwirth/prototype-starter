@@ -5,7 +5,9 @@
 export const environment = {
   production: false,
   // API_BASE_URL: 'http://localhost:9000/.netlify/functions/server'
-  API_BASE_URL: 'https://prototype-starter-api.netlify.com/.netlify/functions/server'
+  API_BASE_URL: 'https://prototype-starter-api.netlify.com/.netlify/functions/server',
+  CONTENTFUL_SPACE: 'heiibemt676c',
+  CONTENTFUL_TOKEN: '68GY1sZJJo5DijZstDgp30nU0frQ4eGNBoFfPVuqTXU'
 };
 
 /*
