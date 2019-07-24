@@ -26,19 +26,30 @@ Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protrac
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
 
-Stuff ToDo
+# Stuff ToDo
 
-- Material Design ✅
-- Material Grid
-- Environment Variables
-- HTTP Call ✅
-- HTTP Call as Observable
-- Prettier RC ✅
-- Custom CSS Library ✅
-- Router ✅
-- Custom Styles verbauen (respnsive mixin)
+- ✅ Material Design
+- ✅ Environment Variables
+- ✅ HTTP Call
+- ✅ Prettier RC
+- ✅ Custom CSS Library
+- ✅ Router
+- ✅🚧 HTTP Call as Observable -> Observable Store ? Reevaluate
+- ✅ Handle static assets
+- ✅ Load Assets from Contentful
+- ✅ Load Media with Srcset
+- ✅ Custom Styles verbauen (respnsive mixin)
+- ✅ Grid System https://github.com/angular/flex-layout/wiki or SCSS? mit Breakpoints aus Global Config -> P Grid
+- ✅ Map Component
+- add responsive navbar
+- google analytics
+- Background image cover component
 - Daten in Stateful Komponente holen runter reichen in Stateless Komponente Manipulieren und Event hochschießen
-- Handle static assets
-- Load Assets from Contentful
-- Load Media with Srcset
-- Map Component
+- Smooth scroll to component
+- Persestierung mit MongoDB
+
+- Push Notification
+- LogIn
+- HTTP with API so No Cors Prolems -> Persist?
+- Skeleton Loader
+- Image Background with loader and placeholder
