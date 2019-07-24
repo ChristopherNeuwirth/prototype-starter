@@ -2,5 +2,26 @@
   components/assets-contentful
 </pre>
 <p>Handle assets which will be loaded dynamicly from a content provider</p>
-<img *ngIf="image" [src]="image.defaulImage" [srcset]="image.responsiveSet" class="demo" />
+<img *ngIf="image" [src]="image.defaultImage" [srcset]="image.responsiveSet" class="demo" />
 
+<p>Handle assets which will be loaded dynamicly from a content provider as background image</p>
+<!-- MVP Make Component -->
+<div
+  *ngIf="image"
+  [ngStyle]="{
+    background: 'url(' + image.defaultImage + '?w=1000&h=300&fit=fill)',
+    backgroundSize: 'cover',
+    backgroundRepeat: 'no-repeat',
+    backgroundPosition: 'center'
+  }"
+  class="demo-background"
+></div>
+
+<p>
+  Handle assets which will be loaded dynamicly from a content provider as background image by a loader component and
+  fits a container
+</p>
+<!-- Image Loader Component -->
+<div *ngIf="image" class="demo-background">
+  <app-image-loader [image]="image"></app-image-loader>
+</div>

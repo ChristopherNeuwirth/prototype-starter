@@ -4,6 +4,11 @@ import { DemoComponent } from './components/demo/demo.component';
 import { DemoRoutingModule } from './demo-routing.module';
 
 // Demo
+import { environment } from 'src/environments/environment';
+
+import { ImageLoaderModule } from '../shared/image-loader/image-loader.module';
+import { NgxMapboxGLModule } from 'ngx-mapbox-gl';
+
 import { MatInputModule, MatListModule, MatProgressSpinnerModule, MatButtonModule } from '@angular/material';
 
 import { DemoService } from './services/iTunes.service';
@@ -14,6 +19,7 @@ import { AsyncApiObservableComponent } from './components/async-api-observable/a
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { AssetsStaticComponent } from './components/assets-static/assets-static.component';
 import { AssetsContentfulComponent } from './components/assets-contentful/assets-contentful.component';
+import { MapComponent } from './components/map/map.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +27,8 @@ import { AssetsContentfulComponent } from './components/assets-contentful/assets
     AsyncApiComponent,
     AsyncApiObservableComponent,
     AssetsStaticComponent,
-    AssetsContentfulComponent
+    AssetsContentfulComponent,
+    MapComponent
   ],
   providers: [DemoService, ContentfulService],
   imports: [
@@ -32,7 +39,11 @@ import { AssetsContentfulComponent } from './components/assets-contentful/assets
     MatProgressSpinnerModule,
     MatButtonModule,
     ReactiveFormsModule,
-    FormsModule
+    FormsModule,
+    ImageLoaderModule,
+    NgxMapboxGLModule.withConfig({
+      accessToken: environment.MAPBOX_TOKEN
+    })
   ]
 })
 export class DemoModule {}

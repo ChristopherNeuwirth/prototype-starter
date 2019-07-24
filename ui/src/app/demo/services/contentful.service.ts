@@ -18,7 +18,7 @@ export class ContentfulService {
       .getAsset(assetId)
       .then((res: any) => {
         return {
-          defaulImage: res.fields.file.url,
+          defaultImage: res.fields.file.url,
           responsiveSet: `${res.fields.file.url}?w=480  480w,
                           ${res.fields.file.url}?w=1920 1920w`
         };

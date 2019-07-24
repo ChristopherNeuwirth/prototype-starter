@@ -3,6 +3,10 @@
 @import './style/layout/index.scss';
 @import '~@angular/material/prebuilt-themes/indigo-pink.css';
 
+// Map Example
+@import '~mapbox-gl/dist/mapbox-gl.css';
+@import '~@mapbox/mapbox-gl-geocoder/lib/mapbox-gl-geocoder.css';
+
 // Demo Styling
 pre {
   text-align: left;
