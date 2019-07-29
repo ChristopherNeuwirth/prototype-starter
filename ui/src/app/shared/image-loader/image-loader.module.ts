@@ -1,10 +1,19 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { ImageLoaderComponent } from './component/image-loader.component';
+import { InViewportModule } from '../in-viewport/in-viewport.module';
 
+import { ImageLoaderComponent } from './image-loader/image-loader.component';
+
+/**
+ * A simple progressive/responsive/lazy loading image library for
+ * Angular that detects browser size and loads the appropriate
+ * image only when the element is in view.
+ * This package requires @thisissoon/angular-inviewport
+ *
+ */
 @NgModule({
+  imports: [CommonModule, InViewportModule],
   declarations: [ImageLoaderComponent],
-  imports: [CommonModule],
   exports: [ImageLoaderComponent]
 })
 export class ImageLoaderModule {}

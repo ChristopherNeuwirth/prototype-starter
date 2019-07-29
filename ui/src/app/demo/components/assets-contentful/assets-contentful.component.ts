@@ -8,12 +8,17 @@ import { ContentfulService } from '../../services/contentful.service';
 })
 export class AssetsContentfulComponent implements OnInit {
   public image;
+  public imageForLoader;
 
   constructor(private contentfulService: ContentfulService) {}
 
   ngOnInit() {
-    this.contentfulService
-      .getResponsiveAsset('1Prri9wlSNuaml9m5TVmxI')
-      .then((providedAsset) => (this.image = providedAsset));
+    this.contentfulService.getResponsiveAssetForImageLoader('1Prri9wlSNuaml9m5TVmxI').then((providedAsset) => {
+      this.imageForLoader = providedAsset;
+    });
+
+    this.contentfulService.getResponsiveAsset('1Prri9wlSNuaml9m5TVmxI').then((providedAsset) => {
+      this.image = providedAsset;
+    });
   }
 }
