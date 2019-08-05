@@ -37,11 +37,25 @@ export class ContentfulService {
         return {
           imageLoader: ImageUtils.generateImageLoaderImageFromContentfulAsset(
             res.fields.file.url,
-            MediaType.IMAGE_JPEG
+            MediaType.IMAGE_JPEG,
+            `${res.fields.file.url}?w=100&fit=fill`
           ),
           src: res.fields.file.url,
           srcSet
         };
+      })
+      .catch((error) => console.log(error));
+  }
+
+  getResponsiveAssetForProgressiveImageCover(assetId: string) {
+    return this.client
+      .getAsset(assetId)
+      .then((res: any) => {
+        // what i want
+        // Skeleton -> Placeholder -> Image
+        // Load when close to Viewport
+        // Have a Object in place which holds the urls for Retina Normal and Mobile Desktop image URLs
+        // Decide by Breakpoint Observer which image to load
       })
       .catch((error) => console.log(error));
   }

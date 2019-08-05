@@ -68,7 +68,7 @@ export class ImageLoaderComponent implements OnInit, AfterViewInit, OnDestroy, O
     { size: 'xl', width: 1200 }
   ];
   // Current size of image to display
-  public size: Size = 'xs';
+  public size: Size;
   // Set of images for different viewports
   @Input() public image: ResponsiveImage;
   // If true means the element is inside the browser viewport

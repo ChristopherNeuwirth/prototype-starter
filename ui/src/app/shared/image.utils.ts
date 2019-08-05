@@ -1,7 +1,6 @@
 import { Observable } from 'rxjs';
 import { Breakpoint, ResponsiveImage } from '@thisissoon/angular-image-loader';
 import { SafeUrl } from '@angular/platform-browser';
-import { IfStmt } from '@angular/compiler';
 
 export enum MediaType {
   AUDIO_MPEG = 'audio/mpeg',
@@ -24,8 +23,8 @@ export class ImageUtils {
   public static generateImageLoaderImageFromContentfulAsset(
     imageUrl: string,
     imageType: MediaType,
-    placeholder?: string | SafeUrl,
-    fallback?: string | SafeUrl,
+    placeholder: string | SafeUrl = '',
+    fallback: string | SafeUrl = '',
     quality?: number,
     sizes: Breakpoint[] = [
       { size: 'xs', width: 0 },
@@ -60,10 +59,6 @@ export class ImageUtils {
         })
       : [];
 
-    if (!placeholder) {
-      placeholder = '';
-    }
-
     return {
       sizes,
       image: {
@@ -76,8 +71,8 @@ export class ImageUtils {
 
   public static generateImageLoaderImage(
     imageUrl: string,
-    placeholder?: string | SafeUrl,
-    fallback?: string | SafeUrl,
+    placeholder: string | SafeUrl = '',
+    fallback: string | SafeUrl = '',
     sizes: Breakpoint[] = [
       { size: 'xs', width: 0 },
       { size: 'sm', width: 660 },
@@ -108,6 +103,7 @@ export class ImageUtils {
   // Generates source set with default sizes or custom sizes.
   // Default sizes are fitting for fullscreen images due to standard breakpoints.
   // Function is using the contentful api parameter for progessive image loading.
+  // tslint:disable-next-line:ban-types
   public static generateSrcset(imageUrl: string, sizes: Number[] = [660, 1200, 1600]) {
     return sizes
       .map((size) => {

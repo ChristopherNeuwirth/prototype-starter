@@ -15,10 +15,15 @@ export class AssetsContentfulComponent implements OnInit {
   ngOnInit() {
     this.contentfulService.getResponsiveAssetForImageLoader('1Prri9wlSNuaml9m5TVmxI').then((providedAsset) => {
       this.imageForLoader = providedAsset;
+      console.log(this.imageForLoader);
     });
 
     this.contentfulService.getResponsiveAsset('1Prri9wlSNuaml9m5TVmxI').then((providedAsset) => {
       this.image = providedAsset;
     });
+  }
+
+  clickFunction() {
+    console.log('click');
   }
 }

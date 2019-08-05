@@ -1,6 +1,7 @@
 <pre>
   components/assets-contentful
 </pre>
+
 <p>Handle assets which will be loaded dynamicly from a content provider</p>
 <img *ngIf="image" [src]="image.src" [srcset]="image.srcSet" class="demo" />
 
@@ -17,13 +18,14 @@
 ></div>
 <p>
   Handle assets which will be loaded dynamicly from a content provider as background image by a loader component when
-  they get into viewport
+  they get into viewport and switch their size based on a srcset
 </p>
 
 <div class="demo-container">
   <sn-image-loader
-    [image]="imageForLoader?.imageLoader.image"
-    [sizes]="imageForLoader?.imageLoader.sizes"
+    *ngIf="imageForLoader"
+    [image]="imageForLoader.imageLoader.image"
+    [sizes]="imageForLoader.imageLoader.sizes"
     imgClass="foo"
     alt="lorem ipsum"
   >
@@ -34,4 +36,12 @@
   Handle assets which will be loaded dynamicly from a content provider as background image by a loader component when
   they get into viewport and show meanwhile a skeleton image / progressive image loader
 </p>
-<div class="demo-container"></div>
+<div class="demo-container">
+  <!-- Find a way to select the image due to viewport -->
+  <app-img-cov-prog
+    class="provide-class-with-height"
+    [placeholder]="imageForLoader?.imageLoader.image.placeholder"
+    [image]="imageForLoader?.src"
+  >
+  </app-img-cov-prog>
+</div>

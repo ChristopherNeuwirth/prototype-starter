@@ -9,7 +9,13 @@ import { environment } from 'src/environments/environment';
 import { ImageLoaderModule } from '../shared/image-loader/image-loader.module';
 import { NgxMapboxGLModule } from 'ngx-mapbox-gl';
 
-import { MatInputModule, MatListModule, MatProgressSpinnerModule, MatButtonModule } from '@angular/material';
+import {
+  MatInputModule,
+  MatListModule,
+  MatProgressSpinnerModule,
+  MatButtonModule,
+  MatIconModule
+} from '@angular/material';
 
 import { DemoService } from './services/iTunes.service';
 import { ContentfulService } from './services/contentful.service';
@@ -21,6 +27,9 @@ import { AssetsStaticComponent } from './components/assets-static/assets-static.
 import { AssetsContentfulComponent } from './components/assets-contentful/assets-contentful.component';
 import { MapComponent } from './components/map/map.component';
 
+import { SharedDirectivesModule } from '../shared/directives/shared-directives.module';
+import { windowProviders } from '../shared/window/window.provider';
+
 @NgModule({
   declarations: [
     DemoComponent,
@@ -30,7 +39,7 @@ import { MapComponent } from './components/map/map.component';
     AssetsContentfulComponent,
     MapComponent
   ],
-  providers: [DemoService, ContentfulService],
+  providers: [DemoService, ContentfulService, windowProviders],
   imports: [
     CommonModule,
     DemoRoutingModule,
@@ -38,12 +47,15 @@ import { MapComponent } from './components/map/map.component';
     MatListModule,
     MatProgressSpinnerModule,
     MatButtonModule,
+    MatIconModule,
     ReactiveFormsModule,
     FormsModule,
     ImageLoaderModule,
+    SharedDirectivesModule,
     NgxMapboxGLModule.withConfig({
       accessToken: environment.MAPBOX_TOKEN
     })
-  ]
+  ],
+  exports: [SharedDirectivesModule]
 })
 export class DemoModule {}

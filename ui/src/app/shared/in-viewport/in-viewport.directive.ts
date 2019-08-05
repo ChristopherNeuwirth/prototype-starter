@@ -77,7 +77,7 @@ export class InViewportDirective implements AfterViewInit, OnDestroy, OnInit {
   }
 
   intersectionObserverCallback(entries: IntersectionObserverEntry[]) {
-    entries.forEach(entry => {
+    entries.forEach((entry) => {
       if (this.inViewport === entry.isIntersecting) {
         return;
       }
