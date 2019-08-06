@@ -34,15 +34,15 @@ export class ContentfulService {
       .getAsset(assetId)
       .then((res: any) => {
         const srcSet = ImageUtils.generateSrcset(res.fields.file.url);
-        return {
-          imageLoader: ImageUtils.generateImageLoaderImageFromContentfulAsset(
-            res.fields.file.url,
-            MediaType.IMAGE_JPEG,
-            `${res.fields.file.url}?w=100&fit=fill`
-          ),
-          src: res.fields.file.url,
-          srcSet
-        };
+        let imageData: { [k: string]: any } = {};
+        imageData = ImageUtils.generateImageLoaderImageFromContentfulAsset(
+          res.fields.file.url,
+          MediaType.IMAGE_JPEG,
+          `${res.fields.file.url}?w=100&fit=fill`
+        );
+        imageData.src = res.fields.file.url;
+        imageData.srcSet = srcSet;
+        return imageData;
       })
       .catch((error) => console.log(error));
   }

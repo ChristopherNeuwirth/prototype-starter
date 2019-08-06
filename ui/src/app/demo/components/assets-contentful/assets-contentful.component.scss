@@ -37,9 +37,9 @@
 }
 
 .sn-image-not-loaded ::ng-deep img {
-  filter: blur(6px);
-  margin: -6px -10px -10px -6px;
-  width: 102%;
+  // filter: blur(6px);
+  // margin: -6px -10px -10px -6px;
+  // width: 102%;
 }
 
 .sn-image-loaded ::ng-deep img {

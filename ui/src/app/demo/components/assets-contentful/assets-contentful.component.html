@@ -22,13 +22,7 @@
 </p>
 
 <div class="demo-container">
-  <sn-image-loader
-    *ngIf="imageForLoader"
-    [image]="imageForLoader.imageLoader.image"
-    [sizes]="imageForLoader.imageLoader.sizes"
-    imgClass="foo"
-    alt="lorem ipsum"
-  >
+  <sn-image-loader [image]="imageForLoader.image" [sizes]="imageForLoader.sizes" imgClass="foo" alt="lorem ipsum">
   </sn-image-loader>
 </div>
 
@@ -40,7 +34,7 @@
   <!-- Find a way to select the image due to viewport -->
   <app-img-cov-prog
     class="provide-class-with-height"
-    [placeholder]="imageForLoader?.imageLoader.image.placeholder"
+    [placeholder]="imageForLoader?.image.placeholder"
     [image]="imageForLoader?.src"
   >
   </app-img-cov-prog>
