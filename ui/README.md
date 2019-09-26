@@ -41,15 +41,15 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 - ✅ Custom Styles verbauen (respnsive mixin)
 - ✅ Grid System https://github.com/angular/flex-layout/wiki or SCSS? mit Breakpoints aus Global Config -> P Grid
 - ✅ Map Component
+- ✅ Smooth scroll to component
+- ✅ Background image cover component
 - add responsive navbar
 - google analytics
-- Background image cover component
 - Daten in Stateful Komponente holen runter reichen in Stateless Komponente Manipulieren und Event hochschießen
-- Smooth scroll to component
+
 - Persestierung mit MongoDB
 
 - Push Notification
 - LogIn
-- HTTP with API so No Cors Prolems -> Persist?
 - Skeleton Loader
 - Image Background with loader and placeholder
