@@ -1,0 +1,21 @@
+<img
+  #img
+  #snInViewport="snInViewport"
+  [src]="src"
+  [srcset]="srcset"
+  [alt]="alt"
+  [class]="imgClass"
+  snInViewport
+  (inViewportChange)="onInViewportChange($event)"
+  (load)="onImageLoad($event)"
+/>
+
+<img
+  *ngIf="(preloadSrc && preloadSrc.length) || preloadSrcset.length"
+  class="sn-img-dummy"
+  [srcset]="preloadSrcset"
+  [src]="preloadSrc"
+  (load)="onImagePreload()"
+  (error)="onImagePreloadError()"
+  alt=""
+/>

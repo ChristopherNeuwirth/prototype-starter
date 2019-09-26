@@ -1,0 +1,47 @@
+@import '../../../../style/mixins/breakpoint.scss';
+@import '../../../../style/mixins/breakpoint.scss';
+
+:host {
+  margin: 0 20px;
+}
+
+.demo {
+  max-width: 100%;
+  height: auto;
+  display: block;
+
+  @include breakpoint('xs') {
+    width: 300px;
+  }
+}
+
+.demo-background {
+  height: 180px;
+
+  @include breakpoint('xs') {
+    height: 300px;
+  }
+}
+
+.demo-container {
+  display: block;
+  position: relative;
+}
+
+.provide-class-with-height {
+  height: 300px;
+}
+
+.foo {
+  transition: all 0.35s ease-in-out;
+}
+
+.sn-image-not-loaded ::ng-deep img {
+  // filter: blur(6px);
+  // margin: -6px -10px -10px -6px;
+  // width: 102%;
+}
+
+.sn-image-loaded ::ng-deep img {
+  filter: blur(0);
+}
