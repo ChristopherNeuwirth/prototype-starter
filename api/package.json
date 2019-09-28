@@ -1,6 +1,6 @@
 {
   "name": "starter-api",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": "",
   "author": "",
   "license": "MIT",
@@ -24,10 +24,12 @@
     "@nestjs/mongoose": "^6.1.2",
     "@nestjs/platform-express": "^6.7.2",
     "dotenv": "^8.1.0",
+    "express": "^4.17.1",
     "mongoose": "^5.7.1",
     "reflect-metadata": "^0.1.13",
     "rimraf": "^3.0.0",
-    "rxjs": "^6.5.3"
+    "rxjs": "^6.5.3",
+    "serverless-http": "^2.3.0"
   },
   "devDependencies": {
     "@nestjs/cli": "^6.8.1",
