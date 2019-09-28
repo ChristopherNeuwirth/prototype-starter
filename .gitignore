@@ -5,6 +5,7 @@ api/functions
 # local env files
 .env.local
 .env.*.local
+api/development.env
 
 # Log files
 npm-debug.log*
