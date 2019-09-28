@@ -6,7 +6,7 @@ import express from 'express';
 
 const server = express();
 
-server.use('/.netlify/functions/server'); // path must route to lambda
+server.use('/.netlify/functions/index'); // path must route to lambda
 
 export const createNestServer = async expressInstance => {
   const app = await NestFactory.create(AppModule, new ExpressAdapter(expressInstance));
