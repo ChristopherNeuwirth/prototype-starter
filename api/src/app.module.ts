@@ -2,27 +2,27 @@ import { Module } from '@nestjs/common';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { SprintModule } from './sprint/sprint.module';
-
-import { ConfigModule } from './config/config.module';
 import { MongooseModule } from '@nestjs/mongoose';
-import { ConfigService } from './config/config.service';
+
+import { resolve } from 'path';
+import { config } from 'dotenv';
+
+if (!process.env.DATABASE_USER) {
+  config({ path: resolve(__dirname, '../.env') });
+}
 
 @Module({
   imports: [
-    ConfigModule,
-    // MongooseModule.forRoot(
-    //   'mongodb+srv://USER:PASSWORD@cluster0-qwlfd.mongodb.net/nestjs?retryWrites=true&w=majority',
-    // ),
-    MongooseModule.forRootAsync({
-      imports: [ConfigModule],
-      useFactory: async (configService: ConfigService) => ({
-        uri: configService.getString(),
-      }),
-      inject: [ConfigService],
-    }),
-    SprintModule,
+    MongooseModule.forRoot(
+      `mongodb+srv://${process.env.DATABASE_USER}:${process.env.DATABASE_PASSWORD}${process.env.DATABASE_URI}`,
+      {
+        useUnifiedTopology: true,
+        useNewUrlParser: true
+      }
+    ),
+    SprintModule
   ],
   controllers: [AppController],
-  providers: [AppService],
+  providers: [AppService]
 })
 export class AppModule {}

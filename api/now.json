@@ -1,0 +1,24 @@
+{
+  "version": 2,
+  "name": "nestjs-now",
+  "env": {
+    "DATABASE_USER": "@database_user",
+    "DATABASE_PASSWORD": "@database_password",
+    "DATABASE_URI": "@database_uri"
+  },
+  "builds": [
+    {
+      "src": "dist/main.js",
+      "use": "@now/node",
+      "config": {
+        "maxLambdaSize": "50mb"
+      }
+    }
+  ],
+  "routes": [
+    {
+      "src": "/(.*)",
+      "dest": "dist/main.js"
+    }
+  ]
+}
