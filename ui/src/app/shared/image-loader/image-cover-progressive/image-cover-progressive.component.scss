@@ -1,0 +1,63 @@
+@import '../../../../style/mixins/breakpoint.scss';
+
+$image-cover-gradient-color: #12181c;
+$image-cover-gradient-transparent: transparent;
+$image-cover-gradient: linear-gradient(to bottom, $image-cover-gradient-transparent, $image-cover-gradient-color);
+$image-cover-gradient-width: 100%;
+$image-cover-gradient-height: 50%;
+$image-cover-gradient-bottom-position: 0;
+
+:host {
+  position: relative;
+  display: inherit;
+  overflow: hidden;
+}
+
+.image-cover {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: calc(100% + 1px);
+  height: calc(100% + 1px);
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+
+  &__gradient {
+    @include breakpoint('xxs') {
+      display: none;
+    }
+
+    @include breakpoint('s') {
+      display: block;
+      width: $image-cover-gradient-width;
+      height: $image-cover-gradient-height;
+      position: absolute;
+      bottom: $image-cover-gradient-bottom-position;
+      background: $image-cover-gradient;
+    }
+  }
+
+  &__gradient-banner {
+    @include breakpoint('xxs') {
+      display: none;
+    }
+
+    @include breakpoint('m') {
+      display: block;
+      width: $image-cover-gradient-width;
+      height: $image-cover-gradient-height;
+      position: absolute;
+      bottom: $image-cover-gradient-bottom-position;
+      background: $image-cover-gradient;
+    }
+  }
+}
+
+.image-cover-progressive {
+  transition: opacity 0.75s ease-in-out;
+
+  &__placeholder {
+    filter: blur(6px);
+  }
+}

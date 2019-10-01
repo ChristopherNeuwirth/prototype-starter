@@ -1,0 +1,14 @@
+<app-image-cover
+  class="image-cover-progressive"
+  [imageUrl]="placeholder$ | async"
+  [gradient]="gradient && (placeholderLoaded$ | async)"
+  [gradientBanner]="gradientBanner && (placeholderLoaded$ | async)"
+  [class.image-cover-progressive__placeholder]="placeholderLoaded$ | async"
+></app-image-cover>
+<app-image-cover
+  class="image-cover-progressive"
+  [style.opacity]="(imageLoaded$ | async) ? 1 : 0"
+  [imageUrl]="image$ | async"
+  [gradient]="gradient"
+  [gradientBanner]="gradientBanner"
+></app-image-cover>
