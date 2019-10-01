@@ -2,9 +2,11 @@
 */node_modules
 */dist
 api/functions
+api/.env
 # local env files
 .env.local
 .env.*.local
+api/development.env
 
 # Log files
 npm-debug.log*
