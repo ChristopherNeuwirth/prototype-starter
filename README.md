@@ -46,7 +46,7 @@ _Build & Deployment_
 
 - Base directory: `ui`
 - Build command: `npm run build`
-- Publish directory: `ui/dist`
+- Publish directory: `ui/dist/starter-ui`
 
 **API Settings**
 
@@ -54,6 +54,7 @@ _Build & Deployment_
 
 - Add the secrets recquired for db connection under a local .env file in the root of api (see an example in `.env.example`)
 - Add the secrets to zeit.co, eg: `now secrets add DATABASE_PASSWORD <PASSWORD>`
+- Deploy by `npm run deploy`
 
 ## Todos and Ideas
 
