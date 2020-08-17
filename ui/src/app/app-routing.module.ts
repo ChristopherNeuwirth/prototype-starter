@@ -14,6 +14,10 @@ const routes: Routes = [
   {
     path: 'demo',
     loadChildren: './demo/demo.module#DemoModule'
+  },
+  {
+    path: 'protected',
+    loadChildren: './protected/protected.module#ProtectedModule'
   }
 ];
 
