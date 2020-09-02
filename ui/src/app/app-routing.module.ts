@@ -1,5 +1,7 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { SigninRedirectComponent } from './core/components/auth-signin-redirect.component';
+import { SignoutRedirectComponent } from './core/components/auth-signout-redirect.component';
 
 const routes: Routes = [
   {
@@ -18,7 +20,9 @@ const routes: Routes = [
   {
     path: 'protected',
     loadChildren: './protected/protected.module#ProtectedModule'
-  }
+  },
+  { path: 'signin', component: SigninRedirectComponent },
+  { path: 'signout', component: SignoutRedirectComponent }
 ];
 
 @NgModule({
