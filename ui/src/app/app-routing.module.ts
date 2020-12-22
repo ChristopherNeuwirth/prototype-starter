@@ -11,15 +11,15 @@ const routes: Routes = [
   },
   {
     path: 'home',
-    loadChildren: './home/home.module#HomeModule'
+    loadChildren: () => import('./home/home.module').then(m => m.HomeModule)
   },
   {
     path: 'demo',
-    loadChildren: './demo/demo.module#DemoModule'
+    loadChildren: () => import('./demo/demo.module').then(m => m.DemoModule)
   },
   {
     path: 'protected',
-    loadChildren: './protected/protected.module#ProtectedModule'
+    loadChildren: () => import('./protected/protected.module').then(m => m.ProtectedModule)
   },
   { path: 'signin', component: SigninRedirectComponent },
   { path: 'signout', component: SignoutRedirectComponent }
