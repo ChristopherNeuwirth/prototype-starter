@@ -6,6 +6,7 @@ import { MongooseModule } from '@nestjs/mongoose';
 
 import { resolve } from 'path';
 import { config } from 'dotenv';
+import { SecureModule } from './secure/secure.module';
 
 if (!process.env.DATABASE_USER) {
   config({ path: resolve(__dirname, '../.env') });
@@ -20,7 +21,8 @@ if (!process.env.DATABASE_USER) {
         useNewUrlParser: true
       }
     ),
-    SprintModule
+    SprintModule,
+    SecureModule
   ],
   controllers: [AppController],
   providers: [AppService]
