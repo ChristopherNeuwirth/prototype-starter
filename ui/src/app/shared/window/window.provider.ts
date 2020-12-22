@@ -15,6 +15,7 @@ export abstract class WindowRef {
   }
 }
 
+@Injectable()
 export class BrowserWindowRef extends WindowRef {
   constructor() {
     super();
