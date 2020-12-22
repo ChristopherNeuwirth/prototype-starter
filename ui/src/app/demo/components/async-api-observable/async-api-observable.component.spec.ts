@@ -1,4 +1,4 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 
 import { AsyncApiObservableComponent } from './async-api-observable.component';
 
@@ -6,7 +6,7 @@ describe('AsyncApiObservableComponent', () => {
   let component: AsyncApiObservableComponent;
   let fixture: ComponentFixture<AsyncApiObservableComponent>;
 
-  beforeEach(async(() => {
+  beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
       declarations: [ AsyncApiObservableComponent ]
     })
