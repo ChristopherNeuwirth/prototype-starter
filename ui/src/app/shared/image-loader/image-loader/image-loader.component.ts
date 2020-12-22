@@ -78,9 +78,9 @@ export class ImageLoaderComponent implements OnInit, AfterViewInit, OnDestroy, O
   //  Completes on component destroy lifecycle event use to handle unsubscription from infinite observables
   public ngUnsubscribe$ = new Subject<void>();
   // Reference to image element
-  @ViewChild('img', { static: false }) public img: ElementRef;
+  @ViewChild('img') public img: ElementRef;
   // Reference to instance of inViewport directive instance
-  @ViewChild('snInViewport', { static: false }) public snInViewport: InViewportDirective;
+  @ViewChild('snInViewport') public snInViewport: InViewportDirective;
   // If true it means the browser supports `srcset`
   public supportsSrcSet = false;
   // Output for placeholder image loaded event.
