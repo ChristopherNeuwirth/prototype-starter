@@ -59,3 +59,5 @@ _Build & Deployment_
 ## Todos and Ideas
 
 - Make NestJs work with Netlify
+- Security: /protected route is protected by guard
+- Security: /secure api uri is protected by api guard

@@ -4,7 +4,8 @@
 
 export const environment = {
   production: false,
-  API_BASE_URL: 'http://localhost:9000/.netlify/functions/server',
+  // API_BASE_URL: 'http://localhost:9000/.netlify/functions/server',
+  API_BASE_URL: 'http://localhost:3000',
   CONTENTFUL_SPACE: 'heiibemt676c',
   CONTENTFUL_TOKEN: '68GY1sZJJo5DijZstDgp30nU0frQ4eGNBoFfPVuqTXU',
   MAPBOX_TOKEN: 'pk.eyJ1IjoiY2FwYmIiLCJhIjoiY2p5OXM4Nzc3MDZ0NzNka2hmam1qZm1xeCJ9.kGcqZDWgCKNju1Do2K0TDw',
