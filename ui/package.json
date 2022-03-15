@@ -24,7 +24,7 @@
     "@thisissoon/angular-image-loader": "^5.1.0",
     "@thisissoon/angular-inviewport": "^4.2.2",
     "contentful": "^7.15.2",
-    "lodash-es": "4.17.14",
+    "lodash-es": "4.17.21",
     "mapbox-gl": "^0.54.0",
     "ngx-mapbox-gl": "^3.3.1",
     "oidc-client": "^1.10.1",
